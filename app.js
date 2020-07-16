@@ -28,6 +28,10 @@ client.connect(err =>
 // Logger
 app.use(morgan("dev"));
 
+//Body Parser
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.get("/", function (req, res) {
   res.json({ success: true });
 });
