@@ -7,16 +7,10 @@ const chalk = require("chalk");
 // Routes imports
 const productRoutes = require("./routes/products");
 
-const app = express();
+// postgres client import
+const client = require("./db/index");
 
-// postgres pool config
-const client = new Client({
-  user: "postgres",
-  host: "localhost",
-  database: "Allshop",
-  password: process.env.DATABASE_PASSWORD,
-  port: 5432,
-});
+const app = express();
 
 // connecting to database
 client.connect(err =>
