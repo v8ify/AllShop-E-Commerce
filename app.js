@@ -7,10 +7,12 @@ const chalk = require("chalk");
 // Routes imports
 const productRoutes = require("./routes/products");
 
+// Importing database connection file
+const sequelize = require("./db/index");
+
 const app = express();
 
 // connecting to database
-const sequelize = new Sequelize(process.env.DATABASE_URL);
 
 sequelize
   .authenticate()
