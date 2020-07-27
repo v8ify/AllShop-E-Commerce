@@ -13,7 +13,6 @@ const sequelize = require("./db/index");
 const app = express();
 
 // connecting to database
-
 sequelize
   .authenticate()
   .then(() => console.log(chalk.yellow("Database connected successfully")))
@@ -26,6 +25,7 @@ app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Home route
 app.get("/", function (req, res) {
   res.json({ success: true });
 });
