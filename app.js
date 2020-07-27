@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const { Sequelize } = require("sequelize");
 const morgan = require("morgan");
 const chalk = require("chalk");
 
