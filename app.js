@@ -1,23 +1,21 @@
 require("dotenv").config();
 const express = require("express");
-const { Client } = require("pg");
+const { Sequelize } = require("sequelize");
 const morgan = require("morgan");
 const chalk = require("chalk");
 
 // Routes imports
 const productRoutes = require("./routes/products");
 
-// postgres client import
-const client = require("./db/index");
-
 const app = express();
 
 // connecting to database
-client.connect(err =>
-  err
-    ? console.log(chalk.red(err))
-    : console.log(chalk.blue("Database connected"))
-);
+const sequelize = new Sequelize(process.env.DATABASE_URL);
+
+sequelize
+  .authenticate()
+  .then(() => console.log(chalk.yellow("Database connected successfully")))
+  .catch(error => console.log(chalk.red("Database connection failed ", error)));
 
 // Logger
 app.use(morgan("dev"));
