@@ -23,7 +23,7 @@ exports.addProduct = async function (req, res, next) {
   try {
     result = await item.save();
   } catch (error) {
-    next(error);
+    return next(error);
   }
 
   res.status(200).json({ success: true, data: result });
