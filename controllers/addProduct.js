@@ -20,10 +20,10 @@ exports.addProduct = async function (req, res, next) {
   });
 
   try {
-    item = await item.save();
+    const result = await item.save();
   } catch (error) {
     next(error);
   }
 
-  res.status(200).json({ success: true, data: item });
+  res.status(200).json({ success: true, data: result });
 };
