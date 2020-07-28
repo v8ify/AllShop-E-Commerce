@@ -6,6 +6,7 @@ const ItemToSell = sequelize.define(
   {
     seller_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       validate: {
         notNull: { msg: "seller_id cannot be null" },
       },
@@ -25,6 +26,7 @@ const ItemToSell = sequelize.define(
     },
     price: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       validate: {
         notNull: {
           msg: "price cannot be null",
@@ -36,6 +38,7 @@ const ItemToSell = sequelize.define(
     },
     discount: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       validate: {
         notNull: {
           msg: "price cannot be null",
