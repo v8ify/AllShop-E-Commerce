@@ -51,3 +51,5 @@ const ItemToSell = sequelize.define(
     tableName: "items_for_sale",
   }
 );
+
+module.exports = ItemToSell;
