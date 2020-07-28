@@ -19,8 +19,9 @@ exports.addProduct = async function (req, res, next) {
     discount,
   });
 
+  let result;
   try {
-    const result = await item.save();
+    result = await item.save();
   } catch (error) {
     next(error);
   }
