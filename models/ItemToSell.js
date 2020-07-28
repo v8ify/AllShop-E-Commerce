@@ -4,6 +4,11 @@ const sequelize = require("../db/index");
 const ItemToSell = sequelize.define(
   "ItemToSell",
   {
+    item_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     seller_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -52,6 +57,7 @@ const ItemToSell = sequelize.define(
 
   {
     tableName: "items_for_sale",
+    timestamps: false,
   }
 );
 
